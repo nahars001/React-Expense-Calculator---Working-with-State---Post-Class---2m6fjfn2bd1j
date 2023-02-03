@@ -9,7 +9,7 @@ const App = () => {
     setExpenseList(prevList => {
       let newList = [...prevList , expenseInput.current.value];
       console.log(newList);
-      let expense = expenseInput.current.value.split(" ");
+      let expense = expenseInput.current.value.split("-");
       setTotalexpense(prevExp => prevExp + parseInt(expense[1].trim()))  
       return newList;
     })    
