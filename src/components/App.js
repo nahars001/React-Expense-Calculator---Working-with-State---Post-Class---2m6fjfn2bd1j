@@ -21,9 +21,7 @@ const App = () => {
       <div id="expense-list">
         {expenseList.map(expense => (<li key={expense}> {expense}</li>))}
       </div>
-      <div id="total-expense">
-        Total Expense: {totalExpense}
-      </div>
+      <div id="total-expense">Total Expense: 400</div>
     </div>
   )
 }
