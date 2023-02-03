@@ -9,16 +9,17 @@ const App = () => {
     setExpenseList(prevList => {
       let newList = [...prevList , expenseInput.current.value];
       console.log(newList);
-      setTotalexpense(prevExp => prevExp + parseInt(expenseInput.current.value))  
+      let expense = expenseInput.current.value.split(" ");
+      setTotalexpense(prevExp => prevExp + parseInt(expense[1].trim()))  
       return newList;
     })    
   }
   return (
     <div id="main">
-      <input id="expense-input" ref={expenseInput} type='number'/>
+      <input id="expense-input" ref={expenseInput}/>
       <button id="expense-button" onClick={addExpenseHandler}>Add Expense</button>
       <div id="expense-list">
-        {expenseList.map(expense => (<li> {expense}</li>))}
+        {expenseList.map(expense => (<li key={expense}> {expense}</li>))}
       </div>
       <div id="total-expense">
         Total Expense: {totalExpense}
